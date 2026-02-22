@@ -1,33 +1,18 @@
 import { createClient } from "@supabase/supabase-js";
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse
-) {
-  // Only allow POST
+export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
-    const {
-      email,
-      referrer,
-      utm_source,
-      utm_medium,
-      utm_campaign,
-    } = req.body || {};
+    const { email, referrer, utm_source, utm_medium, utm_campaign } = req.body || {};
 
-    // Basic email validation
-    const cleanedEmail = String(email || "")
-      .trim()
-      .toLowerCase();
-
+    const cleanedEmail = String(email || "").trim().toLowerCase();
     if (!cleanedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanedEmail)) {
       return res.status(400).json({ error: "Invalid email address" });
     }
 
-    // Create Supabase client using SERVER-ONLY key
     const supabase = createClient(
       process.env.SUPABASE_URL as string,
       process.env.SUPABASE_SERVICE_ROLE_KEY as string
@@ -43,26 +28,16 @@ export default async function handler(
       },
     ]);
 
-    // Duplicate email (Postgres unique violation)
     if (error) {
-      if (error.code === "23505") {
-        return res.status(200).json({
-          ok: true,
-          already: true,
-        });
+      // unique violation = already exists
+      if ((error as any).code === "23505") {
+        return res.status(200).json({ ok: true, already: true });
       }
-
-      return res.status(500).json({
-        error: error.message,
-      });
+      return res.status(500).json({ error: error.message });
     }
 
-    return res.status(200).json({
-      ok: true,
-    });
-  } catch (err) {
-    return res.status(500).json({
-      error: "Server error",
-    });
+    return res.status(200).json({ ok: true });
+  } catch {
+    return res.status(500).json({ error: "Server error" });
   }
 }
