@@ -44,7 +44,7 @@ export function CTA() {
       setMessage(
         data?.already
           ? "You're already on the waitlist!"
-          : "You're on the waitlist! 🚀"
+          : "You're on the waitlist!"
       );
       setEmail("");
     } catch (err) {
