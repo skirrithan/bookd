@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 
 export function Navigation() {
   return (
-    <nav className="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-900">
+    <nav className="sticky top-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-[#141414]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-12">
@@ -27,11 +27,11 @@ export function Navigation() {
           <div className="flex items-center gap-4">
             <Button
               variant="ghost"
-              className="text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900"
+              className="text-zinc-400 hover:text-zinc-100 hover:bg-[#0b0b0b]"
             >
               Sign in
             </Button>
-            <Button className="bg-amber-600 hover:bg-amber-700 text-zinc-950">
+            <Button className="bg-[#5B7335] hover:bg-[#4D632D] text-zinc-950">
               Get started
             </Button>
           </div>
@@ -40,3 +40,6 @@ export function Navigation() {
     </nav>
   );
 }
+
+
+

@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="px-6 py-12 lg:px-8 bg-zinc-950 text-zinc-400 border-t border-zinc-900">
+    <footer className="px-6 py-12 lg:px-8 bg-[#050505] text-zinc-400 border-t border-[#141414]">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           <div>
@@ -37,7 +37,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-zinc-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-zinc-500">
+        <div className="mt-12 pt-8 border-t border-[#141414] flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-zinc-500">
           <p>© 2026 bookd. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="mailto:hello@bookd.co" className="hover:text-zinc-300 transition-colors">
@@ -48,7 +48,7 @@ export function Footer() {
 
         <div className="mt-6 text-xs text-zinc-600 text-center">
           We respect your privacy. Your data is never shared or sold. Read our{" "}
-          <a href="#" className="text-amber-600 hover:text-amber-500">
+          <a href="#" className="text-[#5B7335] hover:text-[#6B8340]">
             privacy policy
           </a>
           .
@@ -57,3 +57,6 @@ export function Footer() {
     </footer>
   );
 }
+
+
+

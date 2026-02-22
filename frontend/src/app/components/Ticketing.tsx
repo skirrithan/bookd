@@ -47,7 +47,7 @@ const ticketingFeatures = [
 
 export function Ticketing() {
   return (
-    <section className="px-6 py-20 lg:px-8 bg-zinc-950">
+    <section className="px-6 py-20 lg:px-8 bg-[#050505]">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-zinc-50 mb-4">
@@ -65,11 +65,11 @@ export function Ticketing() {
             return (
               <div
                 key={feature.title}
-                className="group relative p-8 bg-zinc-900/50 backdrop-blur border border-zinc-800 rounded-xl hover:border-amber-600/30 hover:bg-zinc-900/80 transition-all"
+                className="group relative p-8 bg-[#0b0b0b]/50 backdrop-blur border border-zinc-800 rounded-xl hover:border-[#5B7335]/30 hover:bg-[#0b0b0b]/80 transition-all"
               >
-                <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-lg border border-amber-600/20 group-hover:border-amber-600/40 transition-colors">
+                <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-lg border border-[#5B7335]/20 group-hover:border-[#5B7335]/40 transition-colors">
                   <Icon
-                    className="size-6 text-amber-600"
+                    className="size-6 text-[#5B7335]"
                     strokeWidth={1.5}
                   />
                 </div>
@@ -89,3 +89,6 @@ export function Ticketing() {
     </section>
   );
 }
+
+
+

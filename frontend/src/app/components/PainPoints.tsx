@@ -20,7 +20,7 @@ const painPoints = [
 
 export function PainPoints() {
   return (
-    <section className="px-6 py-20 lg:px-8 bg-zinc-900">
+    <section className="px-6 py-20 lg:px-8 bg-[#0b0b0b]">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-zinc-50 mb-4">
@@ -36,8 +36,8 @@ export function PainPoints() {
             const Icon = point.icon;
             return (
               <div key={point.title} className="relative p-8 bg-zinc-800/50 backdrop-blur border border-zinc-800 rounded-2xl">
-                <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-amber-600/10 border border-amber-600/20">
-                  <Icon className="size-6 text-amber-600" />
+                <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#5B7335]/10 border border-[#5B7335]/20">
+                  <Icon className="size-6 text-[#5B7335]" />
                 </div>
                 <h3 className="text-xl text-zinc-50 mb-3">
                   {point.title}
@@ -53,3 +53,6 @@ export function PainPoints() {
     </section>
   );
 }
+
+
+

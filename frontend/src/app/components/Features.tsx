@@ -78,7 +78,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="px-6 py-20 lg:px-8 bg-zinc-900">
+    <section id="features" className="px-6 py-20 lg:px-8 bg-[#0b0b0b]">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-zinc-50 mb-4">
@@ -97,8 +97,8 @@ export function Features() {
                 key={feature.title} 
                 className="group relative p-6 bg-zinc-800/50 backdrop-blur border border-zinc-800 rounded-xl hover:border-zinc-700 hover:bg-zinc-800/80 transition-all"
               >
-                <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-amber-600/10 border border-amber-600/20 group-hover:bg-amber-600/20 transition-colors">
-                  <Icon className="size-6 text-amber-600" />
+                <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[#5B7335]/10 border border-[#5B7335]/20 group-hover:bg-[#5B7335]/20 transition-colors">
+                  <Icon className="size-6 text-[#5B7335]" />
                 </div>
                 <h3 className="text-lg text-zinc-50 mb-2">
                   {feature.title}
@@ -114,3 +114,6 @@ export function Features() {
     </section>
   );
 }
+
+
+

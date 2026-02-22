@@ -38,7 +38,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="px-6 py-20 lg:px-8 bg-gradient-to-b from-zinc-900 to-zinc-950">
+    <section id="how-it-works" className="px-6 py-20 lg:px-8 bg-gradient-to-b from-[#0b0b0b] to-[#050505]">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-zinc-50 mb-4">
@@ -57,7 +57,7 @@ export function HowItWorks() {
               <div key={step.step} className="relative">
                 {/* Connector Line - only show if not last */}
                 {!isLast && (
-                  <div className="hidden lg:block absolute left-7 top-20 bottom-0 w-px bg-gradient-to-b from-amber-600/50 to-transparent" 
+                  <div className="hidden lg:block absolute left-7 top-20 bottom-0 w-px bg-gradient-to-b from-[#5B7335]/50 to-transparent" 
                     style={{ height: 'calc(100% + 2rem)' }} 
                   />
                 )}
@@ -66,7 +66,7 @@ export function HowItWorks() {
                   {/* Icon and Number */}
                   <div className="flex lg:flex-col items-center lg:items-start gap-4">
                     <div className="relative">
-                      <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-600 shadow-lg shadow-amber-600/20">
+                      <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-[#5B7335] shadow-lg shadow-[#5B7335]/20">
                         <Icon className="size-7 text-zinc-950" />
                       </div>
                     </div>
@@ -75,10 +75,10 @@ export function HowItWorks() {
                   {/* Content */}
                   <div className="bg-zinc-800/50 backdrop-blur border border-zinc-800 rounded-2xl p-8 hover:border-zinc-700 transition-all">
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="text-sm text-amber-600 tracking-wide font-medium">
+                      <span className="text-sm text-[#5B7335] tracking-wide font-medium">
                         STEP {step.step}
                       </span>
-                      <span className="flex-1 h-px bg-gradient-to-r from-amber-600/20 to-transparent" />
+                      <span className="flex-1 h-px bg-gradient-to-r from-[#5B7335]/20 to-transparent" />
                     </div>
                     
                     <h3 className="text-2xl lg:text-3xl text-zinc-50 mb-3">
@@ -92,7 +92,7 @@ export function HowItWorks() {
                     <ul className="space-y-3">
                       {step.details.map((detail, idx) => (
                         <li key={idx} className="flex items-start gap-3 text-zinc-300">
-                          <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-600 flex-shrink-0" />
+                          <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#5B7335] flex-shrink-0" />
                           <span className="text-sm">{detail}</span>
                         </li>
                       ))}
@@ -121,3 +121,6 @@ export function HowItWorks() {
     </section>
   );
 }
+
+
+

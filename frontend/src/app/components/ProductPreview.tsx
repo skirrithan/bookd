@@ -2,7 +2,7 @@ import { CheckCircle2, Circle, Calendar, Mail, Phone, Building2, MoreHorizontal 
 
 export function ProductPreview() {
   return (
-    <section className="px-6 py-20 lg:px-8 bg-zinc-950">
+    <section className="px-6 py-20 lg:px-8 bg-[#050505]">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-zinc-50 mb-4">
@@ -16,8 +16,8 @@ export function ProductPreview() {
         {/* Dashboard Preview */}
         <div className="mb-16">
           <h3 className="text-sm text-zinc-500 mb-4 ml-1">DASHBOARD</h3>
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden">
-            <div className="bg-gradient-to-r from-zinc-800 to-zinc-900 px-8 py-6 border-b border-zinc-800">
+          <div className="bg-[#0b0b0b] border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden">
+            <div className="bg-gradient-to-r from-zinc-800 to-[#0b0b0b] px-8 py-6 border-b border-zinc-800">
               <h4 className="text-2xl text-zinc-50 mb-2">Summer Corporate Retreat 2026</h4>
               <div className="flex items-center gap-4 text-sm text-zinc-400">
                 <span className="flex items-center gap-1.5">
@@ -53,8 +53,8 @@ export function ProductPreview() {
         {/* Task List Preview */}
         <div className="mb-16">
           <h3 className="text-sm text-zinc-500 mb-4 ml-1">TASK LIST</h3>
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden">
-            <div className="px-8 py-5 border-b border-zinc-800 bg-zinc-900/50">
+          <div className="bg-[#0b0b0b] border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden">
+            <div className="px-8 py-5 border-b border-zinc-800 bg-[#0b0b0b]/50">
               <h4 className="text-lg text-zinc-50">Upcoming Tasks</h4>
             </div>
             <div className="divide-y divide-zinc-800/50">
@@ -81,7 +81,7 @@ export function ProductPreview() {
                       task.priority === "high" 
                         ? "bg-red-500/10 text-red-400 border-red-500/20" 
                         : task.priority === "medium"
-                        ? "bg-amber-500/10 text-amber-400 border-amber-500/20"
+                        ? "bg-[#6B8340]/10 text-[#7E9650] border-[#6B8340]/20"
                         : "bg-zinc-800 text-zinc-400 border-zinc-700"
                     }`}>
                       {task.priority}
@@ -97,8 +97,8 @@ export function ProductPreview() {
         {/* Contact List Preview */}
         <div>
           <h3 className="text-sm text-zinc-500 mb-4 ml-1">CONTACTS</h3>
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden">
-            <div className="px-8 py-5 border-b border-zinc-800 bg-zinc-900/50">
+          <div className="bg-[#0b0b0b] border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden">
+            <div className="px-8 py-5 border-b border-zinc-800 bg-[#0b0b0b]/50">
               <h4 className="text-lg text-zinc-50">Event Vendors</h4>
             </div>
             <div className="divide-y divide-zinc-800/50">
@@ -111,7 +111,7 @@ export function ProductPreview() {
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <div className="w-10 h-10 rounded-full bg-amber-600/10 border border-amber-600/20 flex items-center justify-center text-amber-600">
+                        <div className="w-10 h-10 rounded-full bg-[#5B7335]/10 border border-[#5B7335]/20 flex items-center justify-center text-[#5B7335]">
                           {contact.name.split(' ').map(n => n[0]).join('')}
                         </div>
                         <div>
@@ -138,7 +138,7 @@ export function ProductPreview() {
                       <span className={`px-2.5 py-1 text-xs rounded-md border ${
                         contact.status === "active" 
                           ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" 
-                          : "bg-amber-500/10 text-amber-400 border-amber-500/20"
+                          : "bg-[#6B8340]/10 text-[#7E9650] border-[#6B8340]/20"
                       }`}>
                         {contact.status}
                       </span>
@@ -156,3 +156,6 @@ export function ProductPreview() {
     </section>
   );
 }
+
+
+

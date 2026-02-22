@@ -54,7 +54,10 @@ export function CTA() {
   }
 
   return (
-    <section className="px-6 py-20 lg:px-8 bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 text-white border-t border-zinc-800">
+    <section
+      id="cta"
+      className="px-6 py-20 lg:px-8 bg-gradient-to-br from-[#050505] via-[#0b0b0b] to-[#050505] text-white border-t border-zinc-800"
+    >
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-4xl sm:text-5xl text-zinc-50 mb-6">
           Ready to reduce the chaos?
@@ -80,7 +83,7 @@ export function CTA() {
           <Button
             type="submit"
             disabled={status === "loading"}
-            className="bg-amber-600 text-zinc-950 hover:bg-amber-700 h-12 px-8"
+            className="bg-[#5B7335] text-zinc-950 hover:bg-[#4D632D] h-12 px-8"
           >
             {status === "loading" ? "Joining..." : "Join waitlist"}
             <ArrowRight className="size-4 ml-2" />
@@ -104,3 +107,7 @@ export function CTA() {
     </section>
   );
 }
+
+
+
+
