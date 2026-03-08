@@ -1,126 +1,95 @@
-import { FolderOpen, CheckSquare, MessageCircle } from "lucide-react";
+import { ChartNoAxesColumn, QrCode, Ticket } from "lucide-react";
 
 const steps = [
   {
-    icon: FolderOpen,
+    icon: Ticket,
     step: "01",
-    title: "Create an event workspace",
-    description: "One workspace per event. All your tasks, contacts, files, and notes in a single view.",
+    title: "Set up the event",
+    description: "Launch the page, configure tickets, and keep guest list logic in one place.",
     details: [
-      "Import client details and requirements",
-      "Set your event date and budget",
-      "Invite team members to collaborate",
+      "Free, paid, and comp ticket types",
+      "Simple event info and capacity settings",
+      "Team-ready before launch night",
     ],
   },
   {
-    icon: CheckSquare,
+    icon: QrCode,
     step: "02",
-    title: "Track what matters",
-    description: "Custom task lists and deadlines. See exactly what needs your attention right now.",
+    title: "Run the door on mobile",
+    description: "Scan QR codes, resolve edge cases quickly, and keep entry moving.",
     details: [
-      "Build task lists from templates or scratch",
-      "Assign tasks to team members",
-      "Set priorities and due dates",
+      "Fast attendee lookup",
+      "Manual override when needed",
+      "Clear states for every arrival",
     ],
   },
   {
-    icon: MessageCircle,
+    icon: ChartNoAxesColumn,
     step: "03",
-    title: "Keep everyone in sync",
-    description: "Shared timelines and automatic reminders. Your team and vendors always know what's next.",
+    title: "Watch sales and attendance live",
+    description: "See what sold, what scanned, and what still needs attention while the event is active.",
     details: [
-      "Share timelines with clients and vendors",
-      "Get automatic reminders for follow-ups",
-      "Track communication history",
+      "Revenue and attendance in one dashboard",
+      "Useful for organizers and volunteers",
+      "Less cleanup after the event",
     ],
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="px-6 py-20 lg:px-8 bg-gradient-to-b from-[#0b0b0b] to-[#050505]">
+    <section id="workflow" className="px-5 py-14 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl text-zinc-50 mb-4">
+        <div className="mb-8 max-w-2xl sm:mb-12">
+          <p className="text-xs uppercase tracking-[0.28em] text-[#B8FF66]">
+            How it works
+          </p>
+          <h2 className="mt-3 text-3xl text-zinc-50 sm:text-5xl">
             How it works
           </h2>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-            From chaos to clarity in three simple steps. Set up your first event in minutes.
+          <p className="mt-4 text-sm leading-6 text-zinc-400 sm:text-lg">
+            bookd follows the event lifecycle: launch, check in, monitor live.
           </p>
         </div>
 
-        <div className="grid gap-8 lg:gap-12">
+        <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-5 sm:overflow-visible sm:px-0">
           {steps.map((step, index) => {
             const Icon = step.icon;
-            const isLast = index === steps.length - 1;
             return (
-              <div key={step.step} className="relative">
-                {/* Connector Line - only show if not last */}
-                {!isLast && (
-                  <div className="hidden lg:block absolute left-7 top-20 bottom-0 w-px bg-gradient-to-b from-[#5B7335]/50 to-transparent" 
-                    style={{ height: 'calc(100% + 2rem)' }} 
-                  />
-                )}
-                
-                <div className="grid lg:grid-cols-[auto,1fr] gap-6 lg:gap-8">
-                  {/* Icon and Number */}
-                  <div className="flex lg:flex-col items-center lg:items-start gap-4">
-                    <div className="relative">
-                      <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-[#5B7335] shadow-lg shadow-[#5B7335]/20">
-                        <Icon className="size-7 text-zinc-950" />
-                      </div>
-                    </div>
+              <div
+                key={step.step}
+                className="min-w-[280px] snap-start rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-5 sm:min-w-0 sm:p-6"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#B8FF66] text-zinc-950">
+                    <Icon className="size-5" />
                   </div>
-
-                  {/* Content */}
-                  <div className="bg-zinc-800/50 backdrop-blur border border-zinc-800 rounded-2xl p-8 hover:border-zinc-700 transition-all">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="text-sm text-[#5B7335] tracking-wide font-medium">
-                        STEP {step.step}
-                      </span>
-                      <span className="flex-1 h-px bg-gradient-to-r from-[#5B7335]/20 to-transparent" />
-                    </div>
-                    
-                    <h3 className="text-2xl lg:text-3xl text-zinc-50 mb-3">
-                      {step.title}
-                    </h3>
-                    
-                    <p className="text-zinc-400 text-lg mb-6">
-                      {step.description}
-                    </p>
-
-                    <ul className="space-y-3">
-                      {step.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-zinc-300">
-                          <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#5B7335] flex-shrink-0" />
-                          <span className="text-sm">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <span className="text-xs uppercase tracking-[0.24em] text-zinc-500">
+                    Step {step.step}
+                  </span>
                 </div>
+
+                <h3 className="mt-5 text-xl text-zinc-50 sm:text-2xl">
+                  {step.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-zinc-400 sm:text-base">
+                  {step.description}
+                </p>
+
+                <ul className="mt-5 space-y-3">
+                  {step.details.map((detail) => (
+                    <li key={detail} className="flex items-start gap-3 text-sm text-zinc-300">
+                      <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#B8FF66]" />
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             );
           })}
-        </div>
-
-        {/* CTA at bottom */}
-        <div className="mt-16 text-center">
-          <p className="text-zinc-400 mb-6">
-            Ready to see it in action?
-          </p>
-          <button className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700 rounded-lg text-zinc-300 hover:text-zinc-100 transition-all">
-            <span>Watch demo video</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </button>
         </div>
       </div>
     </section>
   );
 }
-
-
-

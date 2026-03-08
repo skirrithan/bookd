@@ -1,109 +1,76 @@
 import { 
-  LayoutDashboard, 
-  CheckSquare, 
-  Users, 
-  FolderOpen, 
-  Calendar, 
-  MessageSquare,
-  Bell,
-  FileText,
-  PieChart,
-  Link2,
-  Lock,
-  Smartphone
+  BarChart3,
+  CreditCard,
+  QrCode,
+  Smartphone,
+  Ticket,
+  UserRoundCheck,
 } from "lucide-react";
 
 const features = [
   {
-    icon: LayoutDashboard,
-    title: "Event Dashboard",
-    description: "See everything at a glance. Track progress, budget, vendors, and deadlines in one unified view.",
+    icon: Ticket,
+    title: "Ticketing that matches the event",
+    description: "Paid, free, guest list, and last-minute comps in one checkout flow.",
   },
   {
-    icon: CheckSquare,
-    title: "Smart Task Management",
-    description: "Create custom workflows, set priorities, and track completion. Nothing slips through the cracks.",
+    icon: QrCode,
+    title: "Fast QR check-in",
+    description: "Scan at the door, handle issues quickly, and keep lines moving on mobile.",
   },
   {
-    icon: Users,
-    title: "Contact Management",
-    description: "Store vendor details, client preferences, and communication history. All searchable and organized.",
+    icon: UserRoundCheck,
+    title: "Clear attendee states",
+    description: "See who paid, who arrived, who is comped, and who still needs attention.",
   },
   {
-    icon: FolderOpen,
-    title: "File Organization",
-    description: "Contracts, floor plans, mood boards—keep every document attached to the right event.",
-  },
-  {
-    icon: Calendar,
-    title: "Timeline Builder",
-    description: "Visual timelines that show what's happening when. Share with your team and clients.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Communication Hub",
-    description: "Internal notes and client messages in one place. Never lose context in email threads.",
-  },
-  {
-    icon: Bell,
-    title: "Smart Reminders",
-    description: "Automated follow-ups for vendors, deadlines, and payments. Stay ahead without the mental load.",
-  },
-  {
-    icon: FileText,
-    title: "Budget Tracking",
-    description: "Track expenses, payments, and invoices. Know exactly where you stand financially.",
-  },
-  {
-    icon: PieChart,
-    title: "Event Analytics",
-    description: "Learn from past events. See what works, what doesn't, and improve your process.",
-  },
-  {
-    icon: Link2,
-    title: "Integrations",
-    description: "Connect with calendar apps, email, and payment tools. Work the way you already work.",
-  },
-  {
-    icon: Lock,
-    title: "Secure & Private",
-    description: "Client data is encrypted and protected. GDPR compliant. Your privacy is non-negotiable.",
+    icon: BarChart3,
+    title: "Live sales visibility",
+    description: "Track volume, revenue, and pacing without waiting for a spreadsheet export.",
   },
   {
     icon: Smartphone,
-    title: "Mobile Ready",
-    description: "Access everything on the go. Check tasks, update statuses, and respond to vendors from anywhere.",
+    title: "Built for the phone first",
+    description: "Useful on-site when you're moving, scanning, and answering attendee questions.",
+  },
+  {
+    icon: CreditCard,
+    title: "Cleaner organizer economics",
+    description: "Transparent fees and payout visibility so you know what the event is making.",
   },
 ];
 
 export function Features() {
   return (
-    <section id="features" className="px-6 py-20 lg:px-8 bg-[#0b0b0b]">
+    <section id="features" className="px-5 py-14 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl text-zinc-50 mb-4">
-            Everything you need to run flawless events
+        <div className="mb-8 max-w-2xl sm:mb-12">
+          <p className="text-xs uppercase tracking-[0.28em] text-[#B8FF66]">
+            Why bookd
+          </p>
+          <h2 className="mt-3 text-3xl leading-tight text-zinc-50 sm:text-5xl">
+            A tighter system for selling tickets and running the room.
           </h2>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-            Powerful features designed specifically for event planners. No bloat, no complexity.
+          <p className="mt-4 text-sm leading-6 text-zinc-400 sm:text-lg">
+            bookd is for teams that need ticketing, door operations, and sales data to work together.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 lg:grid-cols-3">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
               <div 
                 key={feature.title} 
-                className="group relative p-6 bg-zinc-800/50 backdrop-blur border border-zinc-800 rounded-xl hover:border-zinc-700 hover:bg-zinc-800/80 transition-all"
+                className="group min-w-[272px] snap-start rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-5 transition-all hover:border-[#B8FF66]/30 hover:bg-white/[0.06] sm:min-w-0 sm:p-6"
               >
-                <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[#5B7335]/10 border border-[#5B7335]/20 group-hover:bg-[#5B7335]/20 transition-colors">
-                  <Icon className="size-6 text-[#5B7335]" />
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-[#B8FF66]/20 bg-[#B8FF66]/10 transition-colors group-hover:bg-[#B8FF66]/16">
+                  <Icon className="size-5 text-[#B8FF66]" />
                 </div>
-                <h3 className="text-lg text-zinc-50 mb-2">
+                <h3 className="text-base text-zinc-50 sm:text-lg">
                   {feature.title}
                 </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">
+                <p className="mt-2 text-sm leading-6 text-zinc-400">
                   {feature.description}
                 </p>
               </div>
@@ -114,6 +81,3 @@ export function Features() {
     </section>
   );
 }
-
-
-

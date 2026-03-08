@@ -56,58 +56,86 @@ export function CTA() {
   return (
     <section
       id="cta"
-      className="px-6 py-20 lg:px-8 bg-gradient-to-br from-[#050505] via-[#0b0b0b] to-[#050505] text-white border-t border-zinc-800"
+      className="px-5 py-14 sm:px-6 sm:py-20 lg:px-8"
     >
-      <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-4xl sm:text-5xl text-zinc-50 mb-6">
-          Ready to reduce the chaos?
-        </h2>
-        <p className="text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">
-          Join the waitlist for early access. We'll notify you when bookd launches in March 2026.
-        </p>
+      <div className="mx-auto max-w-5xl rounded-[32px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-5 text-white sm:p-8 lg:p-10">
+        <div className="grid gap-8 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.28em] text-[#B8FF66]">
+              Early access
+            </p>
+            <h2 className="mt-3 text-3xl text-zinc-50 sm:text-5xl">
+              Join the waitlist for the first bookd pilot.
+            </h2>
+            <p className="mt-4 max-w-xl text-sm leading-6 text-zinc-400 sm:text-lg">
+              Sign up if you run events and want early access to ticketing, QR check-in,
+              attendee management, and live sales tracking in one product.
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+              {[
+                "Private rollout for early teams",
+                "Feedback-driven product access",
+                "Updates as pilot spots open",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-zinc-300"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <form
-          className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto"
-          onSubmit={handleSubmit}
-        >
-          <Input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            disabled={status === "loading"}
-            className="flex-1 h-12 bg-zinc-800/50 backdrop-blur-sm border-zinc-700 text-zinc-50 placeholder:text-zinc-500"
-          />
+          <div className="rounded-[28px] border border-white/10 bg-[#090909] p-4 sm:p-5">
+            <div className="mb-4">
+              <h3 className="text-lg text-white">Get launch updates</h3>
+              <p className="mt-1 text-sm text-zinc-500">
+                Tell us where to send early-access details.
+              </p>
+            </div>
 
-          <Button
-            type="submit"
-            disabled={status === "loading"}
-            className="bg-[#5B7335] text-zinc-950 hover:bg-[#4D632D] h-12 px-8"
-          >
-            {status === "loading" ? "Joining..." : "Join waitlist"}
-            <ArrowRight className="size-4 ml-2" />
-          </Button>
-        </form>
+            <form
+              className="flex flex-col gap-3"
+              onSubmit={handleSubmit}
+            >
+              <Input
+                type="email"
+                placeholder="you@team.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                disabled={status === "loading"}
+                className="h-12 border-white/10 bg-white/[0.04] text-zinc-50 placeholder:text-zinc-500"
+              />
 
-        {message && (
-          <p
-            className={`mt-6 text-sm ${
-              status === "success" ? "text-green-400" : "text-red-400"
-            }`}
-          >
-            {message}
-          </p>
-        )}
+              <Button
+                type="submit"
+                disabled={status === "loading"}
+                className="h-12 bg-[#B8FF66] px-6 text-zinc-950 hover:bg-[#a2ed53]"
+              >
+                {status === "loading" ? "Joining..." : "Join the waitlist"}
+                <ArrowRight className="ml-2 size-4" />
+              </Button>
+            </form>
 
-        <p className="text-sm text-zinc-500 mt-6">
-          No spam. Unsubscribe anytime.
-        </p>
+            {message && (
+              <p
+                className={`mt-4 text-sm ${
+                  status === "success" ? "text-green-400" : "text-red-400"
+                }`}
+              >
+                {message}
+              </p>
+            )}
+
+            <p className="mt-4 text-xs leading-5 text-zinc-500">
+              Joining means you’ll hear when pilot access opens and what kinds of events bookd is
+              best suited for first. No spam. Unsubscribe anytime.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
-
-
-
-
